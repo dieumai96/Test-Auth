@@ -11,18 +11,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { Authorization } from './services/authorization';
 import { AuthLogged } from './services/auth-logged.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent , canActivate : [AuthLogged]},
-  { path: 'register', component: RegisterComponent , canActivate : [AuthLogged]},
-  { path: 'home', component: HomeComponent, canActivate: [Authorization] }
+  { path: '', redirectTo: 'workplace-login', pathMatch: 'full' },
+  { path: 'workplace-login', component: LoginComponent , canActivate : [AuthLogged]},
+  // { path: 'register', component: RegisterComponent , canActivate : [AuthLogged]},
+  { path: 'workplace-home', component: HomeComponent, canActivate: [Authorization] }
+  {path : '**' , component : NotFoundComponent},
 ];
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

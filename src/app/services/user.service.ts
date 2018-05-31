@@ -12,15 +12,15 @@ export class UserService {
 
   ) { }
 
-  onRegister(body: any) {
-    return this._http.post('http://127.0.0.1:3001/users/register', body, {
-      observe: 'body',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    });
-  }
+  // onRegister(body: any) {
+  //   return this._http.post('http://localhost:3001/workplace-admin/register', body, {
+  //     observe: 'body',
+  //     headers: new HttpHeaders().append('Content-Type', 'application/json')
+  //   });
+  // }
 
   onLogin(body: any) {
-    return this._http.post('http://127.0.0.1:3001/users/signin', body, {
+    return this._http.post('http://localhost:3001/workplace-admin/signin', body, {
       observe: 'body',
       withCredentials: true,
       headers: new HttpHeaders().append('Content-Type', 'application/json')
@@ -38,7 +38,7 @@ export class UserService {
   getProfile() {
     this.loadToken();
     return this._http
-      .get('http://localhost:3001/users/secret', {
+      .get('http://localhost:3001/workplace-admin/secret', {
         headers: new HttpHeaders().set('Authorization', this.auToken)
       });
   }

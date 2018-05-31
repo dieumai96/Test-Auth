@@ -12,7 +12,7 @@ export class Authorization implements CanActivate {
         if (this.userService.isLogin()) {
             return true;
         } else {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/workplace-login']);
             return false;
         }
     }

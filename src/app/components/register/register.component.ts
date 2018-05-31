@@ -23,17 +23,17 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
   onRegister() {
-    if (!this.registerForm.valid || (this.registerForm.controls.password.value != this.registerForm.controls.cpass.value)) {
-      console.log('Invalid Form ');
-      return;
-    }
-    this.userService.onRegister(JSON.stringify(this.registerForm.value)).subscribe(data=>{
-      console.log(data);
-      alert('Account created successfully, You want login now ??');
-      this._router.navigate(['/login']);
-    },err=>{
-      console.log(err);
-    })
+    // if (!this.registerForm.valid || (this.registerForm.controls.password.value != this.registerForm.controls.cpass.value)) {
+    //   console.log('Invalid Form ');
+    //   return;
+    // }
+    // this.userService.onRegister(JSON.stringify(this.registerForm.value)).subscribe(data=>{
+    //   console.log(data);
+    //   alert('Account created successfully, You want login now ??');
+    //   this._router.navigate(['/login']);
+    // },err=>{
+    //   console.log(err);
+    // })
     // console.log(JSON.stringify(this.registerForm.value));
   }
 }

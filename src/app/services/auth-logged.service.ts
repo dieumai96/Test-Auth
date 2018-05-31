@@ -10,7 +10,7 @@ export class AuthLogged implements CanActivate {
     ) { }
     canActivate() {
         if (this.userService.isLogin()) {
-            this.router.navigate(['/home']);
+            this.router.navigate(['/workplace-home']);
             return true;
         } else {
             return true;

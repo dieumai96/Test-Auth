@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
     this.userService.onLogin(JSON.stringify(this.loginForm.value)).subscribe(data=>{
       if(data.success){
         this.userService.storeDataUser(data.token, data.user);
-        this._router.navigate(['/home']);
+        this._router.navigate(['/workplace-home']);
       }else{
-        this._router.navigate(['/login']);
+        this._router.navigate(['/workplace-login']);
       }
     })
   }
